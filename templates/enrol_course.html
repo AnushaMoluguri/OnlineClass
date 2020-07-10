@@ -1,0 +1,43 @@
+{% extends 'common_enrol.html' %}
+
+{% block enrol %}
+    <style>
+        .a{
+            color: black;
+            font-size: 30px;
+
+        }
+    .b{
+        text-align: center;
+    }
+    </style>
+
+       <table class="bg-dark" align="center" style="width: 900px;height: 900px;color: white">
+  <thead class="thead-dark">
+  <tr>
+      <th scope="col" colspan="8" style="text-align: center;color: chartreuse;font-size: 40px">Courses</th>
+  </tr>
+    <tr>
+        <th scope="col" class="a">NAME</th>
+        <th scope="col" class="a">FACULTY</th>
+        <th scope="col" class="a">DATE</th>
+        <th scope="col" class="a">TIME</th>
+        <th scope="col" class="a">FEE</th>
+        <th scope="col" class="a">DURATION</th>
+        <th scope="col" class="a">ENROL</th>
+
+    </tr>
+  {% for x in data %}
+      <tr>
+      <th scope="col" class="b">{{ x.Name }}</th>
+      <th scope="col" class="b">{{ x.Faculty }}</th>
+      <th scope="col" class="b">{{ x.Date}}</th>
+      <th scope="col" class="b">{{ x.Time }}</th>
+      <th scope="col" class="b">{{ x.Fee }}</th>
+      <th scope="col" class="b">{{ x.Duration }}</th>
+          <th scope="col"class="b">yes</th>
+      </tr>
+  {% endfor %}
+  </thead>
+     </table>
+{% endblock %}
